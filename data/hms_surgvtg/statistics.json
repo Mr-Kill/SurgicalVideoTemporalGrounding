@@ -1,0 +1,35 @@
+{
+  "annotation_fps": 1,
+  "splits": {
+    "train": {
+      "videos": 35,
+      "queries": 1858,
+      "segments": 5517,
+      "queries_by_level": {
+        "phase": 239,
+        "instrument": 530,
+        "triplet": 1089
+      }
+    },
+    "test": {
+      "videos": 15,
+      "queries": 808,
+      "segments": 2273,
+      "queries_by_level": {
+        "phase": 100,
+        "instrument": 220,
+        "triplet": 488
+      }
+    }
+  },
+  "total": {
+    "videos": 50,
+    "queries": 2666,
+    "segments": 7790,
+    "queries_by_level": {
+      "phase": 339,
+      "instrument": 750,
+      "triplet": 1577
+    }
+  }
+}

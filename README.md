@@ -2,21 +2,29 @@
 
 Official repository for our MICCAI 2026 paper, **Surgical Video Temporal Grounding**.
 
-This work introduces Surgical Video Temporal Grounding (SurgVTG), a research problem for localizing temporal segments in surgical videos that match natural-language queries. We also introduce Hierarchical Multi-Segment Surgical Video Temporal Grounding (HMS-SurgVTG), a benchmark with phase-, instrument-, and action-triplet-level grounding annotations, together with a memory-augmented vision-language framework for long-form surgical video understanding.
+Surgical Video Temporal Grounding (SurgVTG) localizes temporal segments in surgical videos that match natural-language queries. HMS-SurgVTG provides phase-, instrument-, and action-triplet-level annotations for this task.
 
 ![Overview of the Memory-Augmented VLM framework](assets/figures/architecture.png)
 
-## Repository Status
+## Dataset
 
-This repository is currently being prepared. We will upload the dataset resources, code, and usage instructions here.
+The dataset is available in [data/hms_surgvtg](data/hms_surgvtg/README.md).
 
-Planned releases:
+| Split | Videos | Phase | Instrument | Triplet | Queries |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| Train | 35 | 239 | 530 | 1,089 | 1,858 |
+| Test | 15 | 100 | 220 | 488 | 808 |
+| Total | 50 | 339 | 750 | 1,577 | 2,666 |
 
-- HMS-SurgVTG dataset annotations and metadata
-- Data preprocessing and evaluation scripts
-- Training and inference code
-- Model checkpoints and configuration files
-- Citation and paper links
+The data directory contains query annotations, video splits, category mappings, and statistics. Video frames are available separately through [CholecT50](https://github.com/CAMMA-public/cholect50).
+
+## Code
+
+Training and inference code will be added under `src/surgvtg/`, with execution scripts in `scripts/` and configurations in `configs/`.
+
+## Attribution
+
+The dataset uses CholecT50 from CAMMA, ICube, University of Strasbourg. See the dataset [NOTICE](data/hms_surgvtg/NOTICE.md) and [LICENSE](data/hms_surgvtg/LICENSE) for attribution and terms of use.
 
 ## Citation
 
