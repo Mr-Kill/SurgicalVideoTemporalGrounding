@@ -1,12 +1,13 @@
 # HMS-SurgVTG
 
-HMS-SurgVTG contains natural-language queries and temporal annotations for 50 CholecT50 surgical videos. Queries cover three levels: surgical phase, instrument use within a phase, and action triplets within instrument use.
+HMS-SurgVTG contains natural-language queries and temporal annotations for 50 CholecT50 surgical videos. Queries cover surgical phases, instrument use within a phase, and action triplets within instrument use.
 
 ## Contents
 
 ```text
 hms_surgvtg/
 ├── train.jsonl      # Training queries
+├── val.jsonl        # Validation queries
 ├── test.jsonl       # Test queries
 ├── splits.json     # Video IDs for each split
 ├── categories.json # Category IDs and names
@@ -19,18 +20,15 @@ hms_surgvtg/
 | Split | Videos | Phase | Instrument | Triplet | Queries | Segments |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: |
 | Train | 35 | 239 | 530 | 1,089 | 1,858 | 5,517 |
-| Test | 15 | 100 | 220 | 488 | 808 | 2,273 |
+| Val | 5 | 32 | 61 | 134 | 227 | 633 |
+| Test | 10 | 68 | 159 | 354 | 581 | 1,640 |
 | Total | 50 | 339 | 750 | 1,577 | 2,666 | 7,790 |
 
-Training and test videos are disjoint.
+All three video splits are disjoint. Val and test remain separate annotation files; their predictions are pooled for combined evaluation over 15 videos and 808 queries.
 
 ## Annotation format
 
-Each JSONL line describes one query and all its matching intervals:
-
-```json
-{"id":"VID01_phase_0","video":"VID01","query_type":"phase","query":"The surgery is in the preparation phase.","phase":"preparation","parent_id":null,"parent_segments":null,"segments":[[0.0,21.0]],"video_duration":1734.0}
-```
+Each JSONL line describes one query and all its matching intervals.
 
 | Field | Description |
 | --- | --- |
@@ -46,6 +44,6 @@ Timestamps refer to the original video timeline at 1 FPS. Segment endpoints are 
 
 ## Source and video frames
 
-The source dataset is [CholecT50](https://github.com/CAMMA-public/cholect50), provided by CAMMA, ICube, University of Strasbourg. Obtain the video frames from the source dataset separately. Frames should retain their video IDs and zero-based indices, for example `videos/VID01/000000.png` at 1 FPS.
+The source dataset is [CholecT50](https://github.com/CAMMA-public/cholect50), provided by CAMMA, ICube, University of Strasbourg. Obtain video frames separately. Frames should retain their video IDs and zero-based indices, such as `videos/VID01/000000.png` at 1 FPS.
 
 See [NOTICE](NOTICE.md) for attribution and [LICENSE](LICENSE) for the data terms of use.

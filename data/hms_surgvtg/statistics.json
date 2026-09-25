@@ -11,14 +11,24 @@
         "triplet": 1089
       }
     },
-    "test": {
-      "videos": 15,
-      "queries": 808,
-      "segments": 2273,
+    "val": {
+      "videos": 5,
+      "queries": 227,
+      "segments": 633,
       "queries_by_level": {
-        "phase": 100,
-        "instrument": 220,
-        "triplet": 488
+        "phase": 32,
+        "instrument": 61,
+        "triplet": 134
+      }
+    },
+    "test": {
+      "videos": 10,
+      "queries": 581,
+      "segments": 1640,
+      "queries_by_level": {
+        "phase": 68,
+        "instrument": 159,
+        "triplet": 354
       }
     }
   },

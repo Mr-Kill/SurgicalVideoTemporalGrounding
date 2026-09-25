@@ -36,12 +36,14 @@
     "VID75",
     "VID110"
   ],
-  "test": [
+  "val": [
     "VID08",
     "VID12",
     "VID29",
     "VID50",
-    "VID78",
+    "VID78"
+  ],
+  "test": [
     "VID06",
     "VID51",
     "VID10",
